@@ -17,7 +17,7 @@ $paid_items = get_paid_items($_SESSION['id']);
 
   </head>
   <body>
-      <div class="container-fluid">
+      <div class="container-fluid my-5">
       <?php include 'user_navbar.php' ?>
           <div class="bg-info">
               <h1 class="display-4 text-center text-white p-5 mt-5">

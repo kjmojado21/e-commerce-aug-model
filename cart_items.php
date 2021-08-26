@@ -22,7 +22,7 @@ $total = 0;
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container my-5">
   <?php include 'user_navbar.php' ?>
     <table class="table">
       <thead class="table-dark">
