@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2021 at 03:56 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Sep 01, 2021 at 02:11 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,7 +49,19 @@ INSERT INTO `cart` (`cart_id`, `item_id`, `user_id`, `status`) VALUES
 (8, 1, 6, 'PAID'),
 (9, 2, 6, 'PAID'),
 (10, 2, 6, 'PAID'),
-(11, 2, 6, 'NOT PAID');
+(11, 2, 6, 'PAID'),
+(12, 3, 6, 'PAID'),
+(13, 1, 6, 'PAID'),
+(14, 1, 6, 'PAID'),
+(15, 2, 6, 'PAID'),
+(16, 3, 6, 'PAID'),
+(17, 4, 6, 'PAID'),
+(18, 2, 6, 'PAID'),
+(19, 3, 6, 'PAID'),
+(20, 4, 6, 'PAID'),
+(21, 1, 6, 'NOT PAID'),
+(22, 2, 6, 'NOT PAID'),
+(23, 2, 6, 'NOT PAID');
 
 -- --------------------------------------------------------
 
@@ -72,7 +84,9 @@ INSERT INTO `items` (`item_id`, `item_name`, `item_price`, `item_desc`) VALUES
 (1, 'sample_item_1', '300', 'sample_item_desc'),
 (2, 'sample_item_2', '500', 'sample_item_desc'),
 (3, 'sample_item_1', '300', 'sample_item_desc'),
-(4, 'sample_item_2', '500', 'sample_item_desc');
+(4, 'sample_item_2', '500', 'sample_item_desc'),
+(5, 'a noisy keyboard', '1200000', 'a really noisy keyboard'),
+(6, 'a heavy mouse', '500000', 'a really heavy mouse');
 
 -- --------------------------------------------------------
 
@@ -85,16 +99,17 @@ CREATE TABLE `users` (
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'U'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `password`) VALUES
-(5, 'Kurt John', 'Mojado', 'handsome', 'teacher'),
-(6, 'use_kurt', 'user', 'user_3', 'ee11cbb19052e40b07aac0ca060c23ee');
+INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `password`, `role`) VALUES
+(5, 'Kurt John', 'Mojado', 'handsome', 'teacher', 'U'),
+(6, 'use_kurt', 'user', 'user_3', 'ee11cbb19052e40b07aac0ca060c23ee', 'U');
 
 --
 -- Indexes for dumped tables
@@ -126,13 +141,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

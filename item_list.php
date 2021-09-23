@@ -1,5 +1,5 @@
 <?php
-include 'functions/functions.php';
+  include 'functions/functions.php';
 // print_r(item_list());
 
 ?>
@@ -65,7 +65,11 @@ include 'functions/functions.php';
 <body>
 
     <div class="container-fluid">
-        <?php include 'user_navbar.php' ?>
+        <?php include 'user_navbar.php';
+        
+      
+        ?>
+      
         <!-- <div class="row mt-5">
            
                 <div class="col-3">
