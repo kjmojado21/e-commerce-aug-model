@@ -98,11 +98,11 @@
 
         <div class="container">
             <div class="row">
-                <?php foreach (item_list() as $row) : ?>
+                <?php foreach (item_list() as $row) : ?>.
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="box card">
                             <div class="box cardImg">
-                                <img src="https://image.freepik.com/psd-gratuit/cap-maquette_1310-498.jpg" alt="...">
+                                <img src="uploads/<?php echo $row['item_img'] ?>" alt="...">
                             </div>
                             <div class="info">
                                 <h3><?php echo $row['item_name'] ?></h3>

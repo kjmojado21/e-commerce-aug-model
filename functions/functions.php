@@ -254,3 +254,15 @@ function get_all_orders($status)
         return FALSE;
     }
 }
+
+function upload_item_img($filename,$id){
+    $sql = "UPDATE items SET item_img = '$filename' WHERE item_id = '$id'";
+    $result = db_connect()->query($sql);
+
+    if ($result == TRUE) {
+        return 1;
+    } else {
+        return 0;
+    }
+    
+}
